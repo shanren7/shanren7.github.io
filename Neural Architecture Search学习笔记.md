@@ -33,5 +33,28 @@
 
 2.7 还有采用gradient based optimization方式进行搜索。
 
-2.8 `感想`：NAS可以看做一个大网络剪枝优化的过程。
+```diff
++ 感想：NAS可以看做一个大网络剪枝优化的过程。
+```
+
+## 3. Performance Estimation Strategy
+
+3.1 效果评测主要是考虑到计算量：1）减少训练次数 2) 在子集中训练和验证 3) 用低分辨率图片训练 3) 减少filter数量 
+
+3.2 另外一种是通过学习曲线来判断模型效果，不用训练到最终收敛。
+
+3.3 还可以```训练另外一个网络```来评判模型效果，可以参见[Progressive Neural Architecture Search,Liu et al. 2018a](https://arxiv.org/abs/1712.00559)
+
+3.4 还有一种加速效果测评的方法是基于已训练的模型参数来初始化新的模型
+
+3.5 还有one-shot architecture search也是一种有效加速的方法，即将所有的结构看做一个超级大图的不同的子图（sub graph），有相同边界的子图共享权重。因此，只有一个子图需要训练[Understanding and Simplifying One-Shot Architecture Search,Bender et al.2018](Understanding and Simplifying One-Shot Architecture Search)。这类方法的问题是会严重低估模型性能。One-shot architecture NAS方法的差异是one-shot 模型的训练方法。 one-shot NAS的局限在于supergraph。
+
+# 4. 一些方向
+
+4.1 当前NAS主要集中于优化图像分类模型，目前效果已经很不错了，但是在其它任务上，比如```分割、目标检测、多任务问题、多目标问题、生成对抗网络模型、NLP相关任务、语音相关任务、模型压缩相关任务[N2N Learning: Network to Network Compression via Policy Gradient Reinforcement Learning,Ashok et al.2018](https://arxiv.org/abs/1709.06030)```
+
+4.2 NAS中的一些变量需要考虑：1) search space 2) 计算量 3) 数据增强 4) 训练过程 5) 正则化等。
+
+4.3 同时，当前NAS没有一个统一的好的benchmark
+
 
