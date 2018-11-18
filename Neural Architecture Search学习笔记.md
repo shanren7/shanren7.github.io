@@ -51,7 +51,7 @@
 
 # 4. 一些方向
 
-4.1 当前NAS主要集中于优化图像分类模型，目前效果已经很不错了，但是在其它任务上，比如```分割、目标检测、多任务问题、多目标问题、生成对抗网络模型、NLP相关任务、语音相关任务、模型压缩相关任务[N2N Learning: Network to Network Compression via Policy Gradient Reinforcement Learning,Ashok et al.2018](https://arxiv.org/abs/1709.06030)```
+4.1 当前NAS主要集中于优化图像分类模型，目前效果已经很不错了，但是在其它任务上，比如```分割、目标检测、多任务问题、多目标问题、生成对抗网络模型、NLP相关任务、语音相关任务、模型压缩相关任务```[N2N Learning: Network to Network Compression via Policy Gradient Reinforcement Learning,Ashok et al.2018](https://arxiv.org/abs/1709.06030)
 
 4.2 NAS中的一些变量需要考虑：1) search space 2) 计算量 3) 数据增强 4) 训练过程 5) 正则化等。
 
